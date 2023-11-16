@@ -18,7 +18,7 @@ BIN_PATH = ./bin/
 MANDATORY_SOURCES_PATH = ./src/mandatory/
 
 MANDATORY_SOURCES = \
-	teste.c
+	main.c
 
 OBJECTS = $(addprefix $(BIN_PATH), $(MANDATORY_SOURCES:%.c=%.o))
 
