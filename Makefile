@@ -21,7 +21,8 @@ MANDATORY_SOURCES = \
 	clear.c \
 	error.c \
 	init.c \
-	main.c
+	main.c \
+	validate.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(MANDATORY_SOURCES:%.c=%.o))
 
