@@ -19,7 +19,6 @@ MANDATORY_SOURCES_PATH = ./src/mandatory/
 
 MANDATORY_SOURCES = \
 	clear.c \
-	error.c \
 	init.c \
 	main.c \
 	validate.c \
