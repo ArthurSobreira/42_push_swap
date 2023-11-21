@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/20 17:38:10 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/21 10:47:55 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include "../libs/libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
+
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
 
 typedef enum e_bool
 {
