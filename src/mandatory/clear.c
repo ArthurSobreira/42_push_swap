@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 17:06:21 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:09:43 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,11 @@ void	free_split(char **split)
 		index++;
 	}
 	free(split);
+}
+
+void	handle_error(short exit_code)
+{
+	if (exit_code == 1)
+		ft_putstr_fd("Error\n", STDERR_FILENO);
+	exit(EXIT_FAILURE);
 }
