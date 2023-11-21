@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:15:04 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 17:08:31 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/21 17:11:04 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ void	validate_args(t_push *push_swap)
 	number = 0;
 	while (push_swap->argv[index])
 	{
-		// ft_printf("argv[%d] = %s\n", index, push_swap->argv[index]);
 		if (!check_sintax(push_swap->argv[index]))
 			clear_all(push_swap, EXIT_FAILURE);
 		number = ft_atol(push_swap->argv[index]);
