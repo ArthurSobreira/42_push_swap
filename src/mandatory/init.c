@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:19:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 11:19:59 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:44:28 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@ t_push	*init_push_swap(void)
 	ps->argv = NULL;
 	ps->a = NULL;
 	ps->b = NULL;
+	ps->checker = FALSE;
 	return (ps);
 }
