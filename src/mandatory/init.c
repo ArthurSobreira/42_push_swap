@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:19:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 11:44:28 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/21 14:21:32 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 t_push	*init_push_swap(void)
 {
-	t_push	*ps;
+	t_push	*push_swap;
 
-	ps = (t_push *)malloc(sizeof(t_push));
-	if (!ps)
+	push_swap = (t_push *)malloc(sizeof(t_push));
+	if (!push_swap)
 		handle_error(-1);
-	ps->argv = NULL;
-	ps->a = NULL;
-	ps->b = NULL;
-	ps->checker = FALSE;
-	return (ps);
+	push_swap->argv = NULL;
+	push_swap->a = NULL;
+	push_swap->b = NULL;
+	push_swap->checker = FALSE;
+	return (push_swap);
 }
