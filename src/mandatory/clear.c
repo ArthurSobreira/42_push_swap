@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 11:16:59 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/21 11:30:55 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	clear_all(t_push *push_swap, short exit_code)
 	if (push_swap->argv)
 		free_split(push_swap->argv);
 	free(push_swap);
-	exit(exit_code);
+	handle_error(exit_code);
 }
 
 void	free_split(char **split)
