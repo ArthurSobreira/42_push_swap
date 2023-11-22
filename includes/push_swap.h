@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 17:02:34 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 20:03:27 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,21 @@ typedef enum e_bool
 	FALSE,
 	TRUE
 }	t_bool;
+
+typedef enum e_cmd
+{
+	sa,
+	sb,
+	ss,
+	pa,
+	pb,
+	ra,
+	rb,
+	rr,
+	rra,
+	rrb,
+	rrr
+}	t_cmd;
 
 typedef struct s_stack
 {
@@ -63,5 +78,9 @@ void	handle_error(short exit_code);
 void	clear_all(t_push *push_swap, short exit_code);
 void	free_split(char **split);
 void	free_stack(t_stack **stack);
+
+void	small_sort(t_push *push_swap);
+
+void	swap(t_stack **stack, t_cmd type, t_bool print_checker);
 
 #endif
