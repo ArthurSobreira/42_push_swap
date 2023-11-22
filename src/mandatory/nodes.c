@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 15:38:37 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:16:42 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,8 +44,23 @@ t_stack	*create_node(int value)
 t_stack	*find_last_node(t_stack *stack)
 {
 	if (stack == NULL)
-		return (NULL);
+		handle_error(EXIT_FAILURE);
 	while (stack->next != NULL)
 		stack = stack->next;
 	return (stack);
+}
+
+size_t	stack_length(t_stack *stack)
+{
+	size_t	length;
+
+	if (stack == NULL)
+		handle_error(EXIT_FAILURE);
+	length = 1;
+	while (stack->next != NULL)
+	{
+		length++;
+		stack = stack->next;
+	}
+	return (length);
 }
