@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 16:18:20 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:40:18 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ t_stack	*find_last_node(t_stack *stack);
 void	validate_args(t_push *push_swap);
 t_bool	check_sintax(char *number);
 t_bool	check_duplication(char *args_list[]);
+t_bool	is_ordered(t_stack *stack);
 
 void	handle_error(short exit_code);
 void	clear_all(t_push *push_swap, short exit_code);
