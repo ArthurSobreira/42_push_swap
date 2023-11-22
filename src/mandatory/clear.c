@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 16:24:40 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:26:15 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	free_stack(t_stack **stack)
 {
 	t_stack	*temp;
 
-	if (stack)
+	if (stack != NULL)
 	{
 		while (*stack)
 		{
