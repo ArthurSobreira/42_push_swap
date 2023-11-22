@@ -21,6 +21,7 @@ MANDATORY_SOURCES = \
 	clear.c \
 	init.c \
 	main.c \
+	nodes.c \
 	validate.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(MANDATORY_SOURCES:%.c=%.o))
