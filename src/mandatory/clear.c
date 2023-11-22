@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 16:19:57 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:24:40 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,15 +44,15 @@ void	free_split(char **split)
 
 void	free_stack(t_stack **stack)
 {
-	t_stack	*tmp;
+	t_stack	*temp;
 
 	if (stack)
 	{
 		while (*stack)
 		{
-			tmp = *stack;
+			temp = *stack;
 			*stack = (*stack)->next;
-			free(tmp);
+			free(temp);
 		}
 		*stack = NULL;
 	}
