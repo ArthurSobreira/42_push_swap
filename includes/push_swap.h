@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 15:40:07 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 15:46:22 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ void	validate_args(t_push *push_swap);
 t_bool	check_sintax(char *number);
 t_bool	check_duplication(char *args_list[]);
 
-void	clear_all(t_push *push_swap, short exit_code);
 void	handle_error(short exit_code);
+void	clear_all(t_push *push_swap, short exit_code);
 void	free_split(char **split);
 
 #endif
