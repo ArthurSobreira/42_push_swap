@@ -19,9 +19,11 @@ MANDATORY_SOURCES_PATH = ./src/mandatory/
 
 MANDATORY_SOURCES = \
 	clear.c \
+	cmd_swap.c \
 	init.c \
 	main.c \
 	nodes.c \
+	small_sort.c \
 	validate.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(MANDATORY_SOURCES:%.c=%.o))
