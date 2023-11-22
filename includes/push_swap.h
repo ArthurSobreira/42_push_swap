@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 16:36:41 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 11:31:06 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,20 @@ typedef struct s_stack
 
 typedef struct s_push
 {
-	char	**argv;
 	t_stack	*a;
 	t_stack	*b;
 	t_bool	checker;
+	char	**argv;
 }				t_push;
 
-void	clear_all(t_push *push_swap, short exit_code);
-void	handle_error(short exit_code);
-void	free_split(char **split);
-t_push	*init_push_swap(void);
+t_push	*init_push_swap(int argc, char *argv[]);
 
 void	validate_args(t_push *push_swap);
 t_bool	check_sintax(char *number);
 t_bool	check_duplication(char *args_list[]);
+
+void	clear_all(t_push *push_swap, short exit_code);
+void	handle_error(short exit_code);
+void	free_split(char **split);
 
 #endif
