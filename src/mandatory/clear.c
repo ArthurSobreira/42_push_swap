@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 15:46:10 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:19:57 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	clear_all(t_push *push_swap, short exit_code)
 {
 	if (push_swap->argv && push_swap->split_checker == TRUE)
 		free_split(push_swap->argv);
+	if (push_swap->stack_a)
+		free_stack(&push_swap->stack_a);
 	free(push_swap);
 	handle_error(exit_code);
 }
@@ -38,4 +40,20 @@ void	free_split(char **split)
 		index++;
 	}
 	free(split);
+}
+
+void	free_stack(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (stack)
+	{
+		while (*stack)
+		{
+			tmp = *stack;
+			*stack = (*stack)->next;
+			free(tmp);
+		}
+		*stack = NULL;
+	}
 }
