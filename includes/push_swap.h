@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 11:31:06 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:52:39 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ typedef struct s_push
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_bool	checker;
+	t_bool	split_checker;
 	char	**argv;
 }				t_push;
 
