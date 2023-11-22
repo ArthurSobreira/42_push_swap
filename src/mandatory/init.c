@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:19:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 15:38:28 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 17:24:01 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_push	*init_push_swap(int argc, char *argv[])
 		handle_error(-1);
 	push_swap->stack_a = NULL;
 	push_swap->stack_b = NULL;
+	push_swap->length_a = 0;
+	push_swap->length_b = 0;
 	push_swap->split_checker = FALSE;
 	if (argc == 2)
 	{
@@ -45,4 +47,5 @@ void	init_stack(t_push *push_swap)
 		link_node(&push_swap->stack_a, number);
 		index++;
 	}
+	push_swap->length_a = stack_length(push_swap->stack_a);
 }
