@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:15:04 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 17:11:04 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 16:44:41 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,20 @@ t_bool	check_sintax(char *number)
 		index++;
 	}
 	return (valid);
+}
+
+t_bool	is_ordered(t_stack *stack)
+{
+	t_stack	*temp;
+
+	if (stack == NULL)
+		handle_error(EXIT_FAILURE);
+	temp = stack;
+	while (temp->next)
+	{
+		if (temp->value > temp->next->value)
+			return (FALSE);
+		temp = temp->next;
+	}
+	return (TRUE);
 }
