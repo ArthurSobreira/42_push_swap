@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:19:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 11:38:53 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/22 14:53:08 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,11 @@ t_push	*init_push_swap(int argc, char *argv[])
 		handle_error(-1);
 	push_swap->a = NULL;
 	push_swap->b = NULL;
-	push_swap->checker = FALSE;
+	push_swap->split_checker = FALSE;
 	if (argc == 2)
 	{
 		push_swap->argv = ft_split(argv[1], ' ');
-		push_swap->checker = TRUE;
+		push_swap->split_checker = TRUE;
 	}
 	else
 		push_swap->argv = ++argv;
