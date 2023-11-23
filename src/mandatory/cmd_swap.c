@@ -6,13 +6,36 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:58:58 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 20:08:10 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:46:51 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(t_stack **stack, t_cmd type, t_bool print_checker)
+void	swap(t_push *push_swap, t_cmd type, t_bool print_checker)
+{
+	if (type == sa)
+	{
+		execute_swap(&push_swap->stack_a);
+		if (print_checker)
+			ft_printf("sa\n");
+	}
+	else if (type == sb)
+	{
+		execute_swap(&push_swap->stack_b);
+		if (print_checker)
+			ft_printf("sb\n");
+	}
+	else if (type == ss)
+	{
+		execute_swap(&push_swap->stack_a);
+		execute_swap(&push_swap->stack_b);
+		if (print_checker)
+			ft_printf("ss\n");
+	}
+}
+
+void	execute_swap(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*second;
@@ -30,13 +53,4 @@ void	swap(t_stack **stack, t_cmd type, t_bool print_checker)
     first->prev = NULL;
     second->next = first;
     *stack = second;
-	if (print_checker)
-	{
-		if (type == sa)
-			ft_printf("sa\n");
-		else if (type == sb)
-			ft_printf("sb\n");
-		else if (type == ss)
-			ft_printf("ss\n");
-	}
 }
