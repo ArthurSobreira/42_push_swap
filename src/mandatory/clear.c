@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 16:26:15 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/23 12:21:50 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,4 @@ void	free_split(char **split)
 		index++;
 	}
 	free(split);
-}
-
-void	free_stack(t_stack **stack)
-{
-	t_stack	*temp;
-
-	if (stack != NULL)
-	{
-		while (*stack)
-		{
-			temp = *stack;
-			*stack = (*stack)->next;
-			free(temp);
-		}
-		*stack = NULL;
-	}
 }
