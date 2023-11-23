@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 20:03:27 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:09:20 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_push
 t_push	*init_push_swap(int argc, char *argv[]);
 void	init_stack(t_push *push_swap);
 
-void	link_node(t_stack **stack, int number);
+void	link_node(t_stack **stack, int value);
 t_stack	*create_node(int value);
 t_stack	*find_last_node(t_stack *stack);
 size_t	stack_length(t_stack *stack);
