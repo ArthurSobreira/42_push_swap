@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:58:58 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/23 11:46:51 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/23 12:12:39 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,13 +44,13 @@ void	execute_swap(t_stack **stack)
 		handle_error(EXIT_FAILURE);
 	first = *stack;
 	second = first->next;
-    first->next = second->next;
-    if (second->next)
-    	second->next->prev = first;
-    second->prev = first->prev;
-    if (first->prev)
-        first->prev->next = second;
-    first->prev = NULL;
-    second->next = first;
-    *stack = second;
+	first->next = second->next;
+	if (second->next)
+		second->next->prev = first;
+	second->prev = first->prev;
+	if (first->prev)
+		first->prev->next = second;
+	first->prev = NULL;
+	second->next = first;
+	*stack = second;
 }
