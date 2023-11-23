@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:19:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/22 17:24:01 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:11:07 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,14 +37,14 @@ t_push	*init_push_swap(int argc, char *argv[])
 void	init_stack(t_push *push_swap)
 {
 	size_t	index;
-	int		number;
+	int		value;
 
 	index = 0;
-	number = 0;
+	value = 0;
 	while (push_swap->argv[index])
 	{
-		number = ft_atoi(push_swap->argv[index]);
-		link_node(&push_swap->stack_a, number);
+		value = ft_atoi(push_swap->argv[index]);
+		link_node(&push_swap->stack_a, value);
 		index++;
 	}
 	push_swap->length_a = stack_length(push_swap->stack_a);
