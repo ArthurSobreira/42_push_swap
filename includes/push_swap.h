@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/23 11:09:20 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/23 11:45:52 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,6 +81,7 @@ void	free_stack(t_stack **stack);
 
 void	small_sort(t_push *push_swap);
 
-void	swap(t_stack **stack, t_cmd type, t_bool print_checker);
+void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_swap(t_stack **stack);
 
 #endif
