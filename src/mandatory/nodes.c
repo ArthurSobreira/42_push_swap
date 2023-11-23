@@ -17,7 +17,7 @@ void	link_node(t_stack **stack, int number)
 	t_stack	*new_node;
 	t_stack	*last_node;
 
-	new_node = create_node(number);
+	new_node = create_node(number); // change to value
 	if (!*stack)
 		*stack = new_node;
 	else
