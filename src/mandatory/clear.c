@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/23 12:21:50 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/24 17:24:39 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	handle_error(short exit_code)
 
 void	clear_all(t_push *push_swap, short exit_code)
 {
-	if (push_swap->argv && push_swap->split_checker == TRUE)
+	if (push_swap->argv && push_swap->argv_checker == TRUE)
 		free_split(push_swap->argv);
 	if (push_swap->stack_a)
 		free_stack(&push_swap->stack_a);
