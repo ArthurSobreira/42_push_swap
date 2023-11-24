@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/24 15:14:30 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/24 16:54:23 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,29 +61,37 @@ typedef struct s_push
 	size_t	length_b;
 }				t_push;
 
+// Init Functions
 t_push	*init_push_swap(int argc, char *argv[]);
 void	init_stack(t_push *push_swap);
 
+// Validate Functions
+void	validate_args(t_push *push_swap);
+t_bool	check_duplication(char *args_list[]);
+t_bool	check_sintax(char *number);
+
+// Node Functions
 void	link_node(t_stack **stack, int value);
 t_stack	*create_node(int value);
 t_stack	*find_last_node(t_stack *stack);
-size_t	stack_length(t_stack *stack);
 
-void	validate_args(t_push *push_swap);
-t_bool	check_sintax(char *number);
-t_bool	check_duplication(char *args_list[]);
+// Stack Functions
 t_bool	is_ordered(t_stack *stack);
+size_t	stack_length(t_stack *stack);
+void	free_stack(t_stack **stack);
 
+// Utils Functions
 void	handle_error(short exit_code);
 void	clear_all(t_push *push_swap, short exit_code);
 void	free_split(char **split);
-void	free_stack(t_stack **stack);
 
-void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_swap(t_stack **stack);
+// Command Functions
 void	push(t_push *push_swap, t_cmd type, t_bool print_checker);
 void	execute_push(t_stack **dst_stack, t_stack **src_stack);
+void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_swap(t_stack **stack);
 
+// Sort Functions
 void	small_sort(t_push *push_swap);
 
 #endif
