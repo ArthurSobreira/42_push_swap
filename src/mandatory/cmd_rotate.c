@@ -6,12 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:00:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/24 17:28:07 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/24 18:03:00 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+// The first element becomes the last one
 void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker)
 {
 	if (type == ra)
@@ -37,6 +38,16 @@ void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker)
 
 void	execute_rotate(t_stack **stack)
 {
-	(void)stack;
-	return ;
+	t_stack	*new_last;
+	t_stack	*current_last;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		handle_error(EXIT_FAILURE);
+	new_last = *stack;
+	current_last = find_current_last(*stack);
+	current_last->next = new_last;
+	new_last->prev = current_last;
+	new_last->next = NULL;
+	*stack = (*stack)->next;
+	(*stack)->prev = NULL;
 }
