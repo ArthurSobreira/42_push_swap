@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/23 12:22:14 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:30:23 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ t_stack	*create_node(int value)
 	if (new_node == NULL)
 		handle_error(EXIT_FAILURE);
 	new_node->value = value;
+	new_node->position = 0;
 	new_node->prev = NULL;
 	new_node->next = NULL;
 	return (new_node);
