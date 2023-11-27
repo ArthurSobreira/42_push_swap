@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:20:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/23 12:22:19 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/27 18:36:04 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,21 @@ size_t	stack_length(t_stack *stack)
 		stack = stack->next;
 	}
 	return (length);
+}
+
+void	set_position(t_stack *stack)
+{
+	int	current_pos;
+
+	if (stack == NULL)
+		handle_error(EXIT_FAILURE);
+	current_pos = 0;
+	while (stack != NULL)
+	{
+		stack->position = current_pos;
+		stack = stack->next;
+		++current_pos;
+	}
 }
 
 void	free_stack(t_stack **stack)
