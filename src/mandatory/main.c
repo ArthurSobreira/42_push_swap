@@ -6,28 +6,32 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:35:57 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/25 14:55:03 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/27 16:27:29 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h> 	// Delete later
 
-void	print_elements(t_stack *stack)
+void print_elements(t_stack *stack, char title)
 {
-	while (stack)
-	{
-		if (stack->prev == NULL)
-			ft_printf("prev value: NULL\n");
-		else
-			ft_printf("prev value: %d\n", stack->prev->value);
-		ft_printf("value: %d\n", stack->value);
-		if (stack->next == NULL)
-			ft_printf("next value: NULL\n");
-		else
-			ft_printf("next value: %d\n", stack->next->value);
-		stack = stack->next;
-		ft_printf("\n");
-	}
+	printf("                        STACK %c                       \n", title);
+	printf("|-----------------|-----------------|-----------------|\n");
+    printf("| %-15s | %-15s | %-15s |\n", "prev->value", "value", "next->value");
+	printf("|-----------------|-----------------|-----------------|\n");
+
+    while (stack)
+    {
+        printf("| %-15d | %-15d | %-15d |\n",
+               (stack->prev != NULL) ? stack->prev->value : 0x0,
+               stack->value,
+               (stack->next != NULL) ? stack->next->value : 0x0);
+
+        stack = stack->next;
+
+        if (stack != NULL)
+            printf("|-----------------|-----------------|-----------------|\n");
+    }
 }
 
 int	main(int argc, char *argv[])
@@ -41,13 +45,13 @@ int	main(int argc, char *argv[])
 		push_swap = init_push_swap(argc, argv);
 		validate_args(push_swap);
 		init_stack(push_swap);
-		print_elements(push_swap->stack_a);
+		print_elements(push_swap->stack_a, 'A');
 		if (!is_ordered(push_swap->stack_a))
 		{
 			if (push_swap->length_a <= 5)
 				small_sort(push_swap);
 		}
-		print_elements(push_swap->stack_a);
+		print_elements(push_swap->stack_a, 'A');
 		clear_all(push_swap, EXIT_SUCCESS);
 	}
 	return (0);
