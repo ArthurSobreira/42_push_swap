@@ -20,6 +20,7 @@ MANDATORY_SOURCES_PATH = ./src/mandatory/
 MANDATORY_SOURCES = \
 	clear.c \
 	cmd_push.c \
+	cmd_rev_rotate.c \
 	cmd_rotate.c \
 	cmd_swap.c \
 	init.c \
