@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:00:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/27 11:08:26 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/27 11:38:10 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,13 +37,13 @@ void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker)
 
 void	execute_rotate(t_stack **stack)
 {
-	t_stack	*new_last;
 	t_stack	*current_last;
+	t_stack	*new_last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		handle_error(EXIT_FAILURE);
-	new_last = *stack;
 	current_last = find_last_node(*stack);
+	new_last = *stack;
 	*stack = (*stack)->next;
 	(*stack)->prev = NULL;
 	current_last->next = new_last;
