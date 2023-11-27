@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:32:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/27 12:12:28 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/27 12:23:28 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	execute_rev_rotate(t_stack **stack)
 {
 	t_stack	*current_first;
 	t_stack	*new_first;
-	
+
 	if (*stack == NULL || (*stack)->next == NULL)
 		handle_error(EXIT_FAILURE);
 	current_first = *stack;
