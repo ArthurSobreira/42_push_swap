@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:20:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 10:48:23 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/28 13:32:03 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	set_position(t_stack *stack)
 	int	current_pos;
 
 	if (stack == NULL)
-		handle_error(EXIT_FAILURE);
+		return ;
 	current_pos = 0;
 	while (stack != NULL)
 	{
