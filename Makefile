@@ -27,6 +27,7 @@ MANDATORY_SOURCES = \
 	main.c \
 	nodes.c \
 	small_sort.c \
+	sort_utils.c \
 	stack_utils.c \
 	validate.c \
 
