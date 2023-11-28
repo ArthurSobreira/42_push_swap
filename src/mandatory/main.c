@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:35:57 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 11:01:24 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:40:51 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,9 @@ void	print_elements(t_stack *stack, char title)
 	printf("|-----------------|-----------------|-----------------|\n");
 	while (stack)
 	{
-		printf("| %-15d | %-15d | %-15d |\n",
+		printf("| %-15d | [%d]: %-10d | %-15d |\n",
 			(stack->prev != NULL) ? stack->prev->value : 0x0,
+			stack->index,
 			stack->value,
 			(stack->next != NULL) ? stack->next->value : 0x0);
 		stack = stack->next;
