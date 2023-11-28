@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:35:57 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 15:46:19 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/28 16:41:11 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ int	main(int argc, char *argv[])
 				small_sort(push_swap);
 		}
 		print_elements(push_swap->stack_a, 'A');
+		print_elements(push_swap->stack_b, 'B');
 		clear_all(push_swap, EXIT_SUCCESS);
 	}
 	return (0);
