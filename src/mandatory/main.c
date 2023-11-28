@@ -6,32 +6,31 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:35:57 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 10:23:26 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/28 11:01:24 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h> 	// Delete later
+#include <stdio.h> // Delete later
 
-void print_elements(t_stack *stack, char title)
+void	print_elements(t_stack *stack, char title)
 {
 	printf("                        STACK %c                       \n", title);
 	printf("|-----------------|-----------------|-----------------|\n");
-    printf("| %-15s | %-15s | %-15s |\n", "prev->value", "value", "next->value");
+	printf("| %-15s | %-15s | %-15s |\n", "prev->value", "value",
+		"next->value");
 	printf("|-----------------|-----------------|-----------------|\n");
-
-    while (stack)
-    {
-        printf("| %-15d | %-15d | %-15d |\n",
-               (stack->prev != NULL) ? stack->prev->value : 0x0,
-               stack->value,
-               (stack->next != NULL) ? stack->next->value : 0x0);
-
-        stack = stack->next;
-
-        if (stack != NULL)
-            printf("|-----------------|-----------------|-----------------|\n");
-    }
+	while (stack)
+	{
+		printf("| %-15d | %-15d | %-15d |\n",
+			(stack->prev != NULL) ? stack->prev->value : 0x0,
+			stack->value,
+			(stack->next != NULL) ? stack->next->value : 0x0);
+		stack = stack->next;
+		if (stack != NULL)
+			printf("|-----------------|-----------------|-----------------|\n");
+	}
+	printf("\n");
 }
 
 int	main(int argc, char *argv[])
