@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:03:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 19:46:44 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/29 11:38:48 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,19 +53,19 @@ void	sort_three(t_push *push_swap)
 void	sort_few_elements(t_push *push_swap)
 {
 	short	lowest_pos;
-	int		center;
+	int		center_line;
 
 	while (stack_length(push_swap->stack_a) != 3)
 	{
 		set_position(push_swap->stack_a);
 		lowest_pos = find_low_position(push_swap->stack_a);
-		center = push_swap->length_a / 2;
-		if (lowest_pos <= center)
+		center_line = stack_length(push_swap->stack_a) / 2;
+		if (lowest_pos <= center_line)
 		{
 			while (push_swap->stack_a->position != lowest_pos)
 				rotate(push_swap, ra, TRUE);
 		}
-		else if (lowest_pos > center)
+		else if (lowest_pos > center_line)
 		{
 			while (push_swap->stack_a->position != lowest_pos)
 				rev_rotate(push_swap, rra, TRUE);
