@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:03:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 12:37:37 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:58:21 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,23 +53,12 @@ void	sort_three(t_push *push_swap)
 void	sort_few_elements(t_push *push_swap)
 {
 	short	smallest_pos;
-	t_stack	*smallest_node;
 
 	while (stack_length(push_swap->stack_a) != 3)
 	{
-		set_position(push_swap->stack_a);
 		smallest_pos = find_smallest_position(push_swap->stack_a);
-		smallest_node = get_node(push_swap->stack_a, smallest_pos);
-		if (smallest_node->above_median)
-		{
-			while (push_swap->stack_a->position != smallest_pos)
-				rotate(push_swap, ra, TRUE);
-		}
-		else if (!smallest_node->above_median)
-		{
-			while (push_swap->stack_a->position != smallest_pos)
-				rev_rotate(push_swap, rra, TRUE);
-		}
+		if (push_swap->stack_a->position != smallest_pos)
+			smallest_to_top(push_swap);
 		push(push_swap, pb, TRUE);
 	}
 	if (!is_ordered(push_swap->stack_a))
