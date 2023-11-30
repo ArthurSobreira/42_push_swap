@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 18:45:30 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:09:10 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,8 @@ typedef struct s_stack
 {
 	int				value;
 	int				position;
+	t_bool			above_median;
+	struct s_stack	*match_node;
 	struct s_stack	*prev;
 	struct s_stack	*next;
 }					t_stack;
@@ -75,11 +77,11 @@ t_bool	check_sintax(char *number);
 void	link_node(t_stack **stack, int value);
 t_stack	*create_node(int value);
 t_stack	*find_last_node(t_stack *stack);
+t_stack	*get_node(t_stack *stack, short position);
 
 // Stack Functions
 t_bool	is_ordered(t_stack *stack);
 size_t	stack_length(t_stack *stack);
-void	set_position(t_stack *stack);
 void	free_stack(t_stack **stack);
 
 // Utils Functions
@@ -101,6 +103,7 @@ void	execute_rev_rotate(t_stack **stack);
 void	small_sort(t_push *push_swap);
 void	sort_three(t_push *push_swap);
 void	sort_few_elements(t_push *push_swap);
+void	set_position(t_stack *stack);
 short	find_low_position(t_stack *stack);
 short	find_high_position(t_stack *stack);
 
