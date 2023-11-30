@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:47:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 11:06:34 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:18:45 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	set_position(t_stack *stack)
 	}
 }
 
-short	find_high_position(t_stack *stack)
+short	find_bigger_position(t_stack *stack)
 {
 	short	position;
 	int		temp_max;
@@ -52,7 +52,7 @@ short	find_high_position(t_stack *stack)
 	return (position);
 }
 
-short	find_low_position(t_stack *stack)
+short	find_smaller_position(t_stack *stack)
 {
 	short	position;
 	int		temp_min;
