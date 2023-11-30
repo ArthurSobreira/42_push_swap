@@ -18,6 +18,7 @@ BIN_PATH = ./bin/
 MANDATORY_SOURCES_PATH = ./src/mandatory/
 
 MANDATORY_SOURCES = \
+	big_sort.c \
 	clear.c \
 	cmd_push.c \
 	cmd_rev_rotate.c \
