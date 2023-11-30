@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 12:56:13 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 18:59:41 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,9 @@ typedef struct s_stack
 {
 	int				value;
 	int				position;
+	int				price;
 	t_bool			above_median;
+	t_bool			cheapest;
 	struct s_stack	*match_node;
 	struct s_stack	*prev;
 	struct s_stack	*next;
@@ -106,6 +108,7 @@ void	sort_few_elements(t_push *push_swap);
 
 // Big Sort Functions
 void	big_sort(t_push *push_swap);
+void	set_match_node(t_stack *stack_a, t_stack *stack_b);
 
 // Sort Utils Functions
 void	set_position(t_stack *stack);
