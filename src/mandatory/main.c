@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:35:57 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/29 11:48:57 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 19:45:51 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,8 @@ int	main(int argc, char *argv[])
 		{
 			if (push_swap->length_a <= 10)
 				small_sort(push_swap);
+			else
+				big_sort(push_swap);
 		}
 		print_elements(push_swap->stack_a, 'A');
 		print_elements(push_swap->stack_b, 'B');
