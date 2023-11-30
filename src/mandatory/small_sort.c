@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:03:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 11:17:07 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:22:05 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,27 +24,27 @@ void	small_sort(t_push *push_swap)
 
 void	sort_three(t_push *push_swap)
 {
-	short	lowest_pos;
-	short	highest_pos;
+	short	smaller_pos;
+	short	bigger_pos;
 
 	set_position(push_swap->stack_a);
-	lowest_pos = find_low_position(push_swap->stack_a);
-	highest_pos = find_high_position(push_swap->stack_a);
-	if (lowest_pos == 0)
+	smaller_pos = find_smaller_position(push_swap->stack_a);
+	bigger_pos = find_bigger_position(push_swap->stack_a);
+	if (smaller_pos == 0)
 	{
 		rev_rotate(push_swap, rra, TRUE);
 		swap(push_swap, sa, TRUE);
 	}
-	else if (lowest_pos == 1)
+	else if (smaller_pos == 1)
 	{
-		if (highest_pos == 0)
+		if (bigger_pos == 0)
 			rotate(push_swap, ra, TRUE);
 		else
 			swap(push_swap, sa, TRUE);
 	}
-	else if (lowest_pos == 2)
+	else if (smaller_pos == 2)
 	{
-		if (highest_pos == 0)
+		if (bigger_pos == 0)
 			swap(push_swap, sa, TRUE);
 		rev_rotate(push_swap, rra, TRUE);
 	}
@@ -52,22 +52,22 @@ void	sort_three(t_push *push_swap)
 
 void	sort_few_elements(t_push *push_swap)
 {
-	short	lowest_pos;
-	t_stack	*lowest_node;
+	short	smaller_pos;
+	t_stack	*smaller_node;
 
 	while (stack_length(push_swap->stack_a) != 3)
 	{
 		set_position(push_swap->stack_a);
-		lowest_pos = find_low_position(push_swap->stack_a);
-		lowest_node = get_node(push_swap->stack_a, lowest_pos);
-		if (lowest_node->above_median)
+		smaller_pos = find_smaller_position(push_swap->stack_a);
+		smaller_node = get_node(push_swap->stack_a, smaller_pos);
+		if (smaller_node->above_median)
 		{
-			while (push_swap->stack_a->position != lowest_pos)
+			while (push_swap->stack_a->position != smaller_pos)
 				rotate(push_swap, ra, TRUE);
 		}
-		else if (!lowest_node->above_median)
+		else if (!smaller_node->above_median)
 		{
-			while (push_swap->stack_a->position != lowest_pos)
+			while (push_swap->stack_a->position != smaller_pos)
 				rev_rotate(push_swap, rra, TRUE);
 		}
 		push(push_swap, pb, TRUE);
