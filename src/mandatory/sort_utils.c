@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:47:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 12:34:28 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:55:57 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,26 @@ void	set_position(t_stack *stack)
 			stack->above_median = FALSE;
 		stack = stack->next;
 		++current_pos;
+	}
+}
+
+void	smallest_to_top(t_push *push_swap)
+{
+	short	smallest_pos;
+	t_stack	*smallest_node;
+
+	set_position(push_swap->stack_a);
+	smallest_pos = find_smallest_position(push_swap->stack_a);
+	smallest_node = get_node(push_swap->stack_a, smallest_pos);
+	if (smallest_node->above_median)
+	{
+		while (push_swap->stack_a->position != smallest_pos)
+			rotate(push_swap, ra, TRUE);
+	}
+	else if (!smallest_node->above_median)
+	{
+		while (push_swap->stack_a->position != smallest_pos)
+			rev_rotate(push_swap, rra, TRUE);
 	}
 }
 
