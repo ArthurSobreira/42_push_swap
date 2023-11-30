@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 15:44:43 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 11:09:24 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,10 @@ t_stack	*create_node(int value)
 		handle_error(EXIT_FAILURE);
 	new_node->value = value;
 	new_node->position = 0;
+	new_node->above_median = FALSE;
 	new_node->prev = NULL;
 	new_node->next = NULL;
+	new_node->match_node = NULL;
 	return (new_node);
 }
 
@@ -49,4 +51,15 @@ t_stack	*find_last_node(t_stack *stack)
 	while (stack->next != NULL)
 		stack = stack->next;
 	return (stack);
+}
+
+t_stack	*get_node(t_stack *stack, short position)
+{
+	while (stack != NULL)
+	{
+		if (stack->position == position)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
 }
