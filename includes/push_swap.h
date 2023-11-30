@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 12:05:10 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/11/30 12:18:49 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ void	big_sort(t_push *push_swap);
 
 // Sort Utils Functions
 void	set_position(t_stack *stack);
-short	find_low_position(t_stack *stack);
-short	find_high_position(t_stack *stack);
+short	find_smaller_position(t_stack *stack);
+short	find_bigger_position(t_stack *stack);
 
 #endif
