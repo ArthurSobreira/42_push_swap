@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:02:18 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/28 15:53:31 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:10:48 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	execute_push(t_stack **dst_stack, t_stack **src_stack)
 	t_stack	*push_node;
 
 	if (*src_stack == NULL)
-		handle_error(EXIT_FAILURE);
+		return ;
 	push_node = *src_stack;
 	*src_stack = (*src_stack)->next;
 	if (*src_stack != NULL)
