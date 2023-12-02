@@ -21,13 +21,12 @@ void	read_commands(t_push *push_swap)
 	counter = 1;
 	while (TRUE)
 	{
-		ft_printf("\033[35;3m%dst command\033[0m> ", counter);
+		ft_printf("\033[35;3m%dst command\033[0m> ", counter++);
 		command = get_next_line(STDIN_FILENO);
 		if (command == NULL)
 			break ;
 		execute_commands(push_swap, command);
 		free(command);
-		counter++;
 	}
 	len = stack_length(push_swap->stack_a);
 	if ((is_ordered(push_swap->stack_a)) && (len == push_swap->length_a) \
