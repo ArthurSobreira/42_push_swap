@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/16 15:35:57 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 17:46:53 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:12:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,55 +31,6 @@ void	print_elements(t_stack *stack, char title)
 			printf("|-----------------|-----------------|-----------------|\n");
 	}
 	printf("\n");
-}
-
-void	execute_commands(t_push *push_swap, char *command)
-{
-	if (!ft_strncmp(command, "sa", 3))
-		swap(push_swap, sa, TRUE);
-	else if (!ft_strncmp(command, "sb", 3))
-		swap(push_swap, sb, TRUE);
-	else if (!ft_strncmp(command, "ss", 3))
-		swap(push_swap, ss, TRUE);
-	else if (!ft_strncmp(command, "pa", 3))
-		push(push_swap, pa, TRUE);
-	else if (!ft_strncmp(command, "pb", 3))
-		push(push_swap, pb, TRUE);
-	else if (!ft_strncmp(command, "ra", 3))
-		rotate(push_swap, ra, TRUE);
-	else if (!ft_strncmp(command, "rb", 3))
-		rotate(push_swap, rb, TRUE);
-	else if (!ft_strncmp(command, "rr", 3))
-		rotate(push_swap, rr, TRUE);
-	else if (!ft_strncmp(command, "rra", 4))
-		reverse_rotate(push_swap, rra, TRUE);
-	else if (!ft_strncmp(command, "rrb", 4))
-		reverse_rotate(push_swap, rrb, TRUE);
-	else if (!ft_strncmp(command, "rrr", 4))
-		reverse_rotate(push_swap, rrr, TRUE);
-	else
-		handle_error(EXIT_FAILURE);
-}
-
-void	read_commands(t_push *push_swap)
-{
-	char	*command;
-	int		counter;
-	
-	counter = 1;
-	while (TRUE)
-	{
-		ft_printf("\033[35;3m%dst command\033[0m> ", counter);
-		command = get_next_line(STDIN_FILENO);
-		if (command == NULL)
-			break ;
-		execute_commands(push_swap, command);
-		counter++;
-	}
-	if (is_ordered(push_swap->stack_a) && push_swap->stack_b == NULL)
-		ft_printf("\033[32;1mOK\033[0m\n");
-	else
-		ft_printf("\033[31;1mKO\033[0m\n");
 }
 
 int	main(int argc, char *argv[])
