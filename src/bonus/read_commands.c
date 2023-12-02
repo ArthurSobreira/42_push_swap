@@ -26,6 +26,7 @@ void	read_commands(t_push *push_swap)
 		if (command == NULL)
 			break ;
 		execute_commands(push_swap, command);
+		free(command);
 		counter++;
 	}
 	len = stack_length(push_swap->stack_a);
@@ -61,5 +62,5 @@ void	execute_commands(t_push *push_swap, char *command)
 	else if (!ft_strncmp(command, "rrr\n", 4))
 		reverse_rotate(push_swap, rrr, FALSE);
 	else
-		handle_error(EXIT_FAILURE);
+		clear_invalid_command(push_swap, command);
 }
