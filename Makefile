@@ -44,6 +44,7 @@ BONUS_SOURCES = \
 	init_bonus.c \
 	main_bonus.c \
 	nodes_bonus.c \
+	read_commands.c \
 	stack_utils_bonus.c \
 	validate_bonus.c \
 
