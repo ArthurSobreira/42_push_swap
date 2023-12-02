@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 18:59:41 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:40:29 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,8 +98,8 @@ void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
 void	execute_swap(t_stack **stack);
 void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
 void	execute_rotate(t_stack **stack);
-void	rev_rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_rev_rotate(t_stack **stack);
+void	reverse_rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_reverse_rotate(t_stack **stack);
 
 // Small Sort Functions
 void	small_sort(t_push *push_swap);
