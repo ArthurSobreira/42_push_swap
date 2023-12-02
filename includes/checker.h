@@ -92,7 +92,7 @@ void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
 void	execute_swap(t_stack **stack);
 void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
 void	execute_rotate(t_stack **stack);
-void	rev_rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_rev_rotate(t_stack **stack);
+void	reverse_rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_reverse_rotate(t_stack **stack);
 
 #endif
