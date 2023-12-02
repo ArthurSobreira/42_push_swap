@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 18:03:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 16:47:12 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/02 17:42:21 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	sort_three(t_push *push_swap)
 	biggest_pos = find_biggest_position(push_swap->stack_a);
 	if (smallest_pos == 0)
 	{
-		rev_rotate(push_swap, rra, TRUE);
+		reverse_rotate(push_swap, rra, TRUE);
 		swap(push_swap, sa, TRUE);
 	}
 	else if (smallest_pos == 1)
@@ -46,7 +46,7 @@ void	sort_three(t_push *push_swap)
 	{
 		if (biggest_pos == 0)
 			swap(push_swap, sa, TRUE);
-		rev_rotate(push_swap, rra, TRUE);
+		reverse_rotate(push_swap, rra, TRUE);
 	}
 }
 
