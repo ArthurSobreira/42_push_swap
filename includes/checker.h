@@ -83,6 +83,7 @@ void	free_stack(t_stack **stack);
 // Utils Functions
 void	handle_error(short exit_code);
 void	clear_all(t_push *push_swap, short exit_code);
+void	clear_invalid_command(t_push *push_swap, char *command);
 void	free_split(char **split);
 
 // Command Functions
