@@ -80,9 +80,9 @@ $(BIN_PATH)%.o: $(BONUS_SOURCES_PATH)%.c
 	@echo " "
 
 $(NAME_BONUS): $(BONUS_OBJECTS)
-	@echo $(CYAN)" --------------------------------------------------"$(COLOR_LIMITER)
+	@echo $(CYAN)" ------------------------------------------------"$(COLOR_LIMITER)
 	@echo $(CYAN)"| CHECKER executable was created successfully!! |"$(COLOR_LIMITER)
-	@echo $(CYAN)"--------------------------------------------------"$(COLOR_LIMITER)
+	@echo $(CYAN)"------------------------------------------------"$(COLOR_LIMITER)
 	@$(CC) $(CFLAGS) -o $(NAME_BONUS) $(BONUS_OBJECTS) -L $(LIB_PATH) -lft
 	@echo " "
 
