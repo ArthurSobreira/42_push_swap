@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 11:32:49 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/10/17 17:09:20 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/02 18:26:34 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 15
 # endif
+
+# define CLEAR_STATIC -1
 
 // Functions Prototypes
 char	*get_next_line(int fd);
