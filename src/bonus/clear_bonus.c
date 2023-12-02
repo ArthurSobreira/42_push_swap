@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:15:20 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 18:35:52 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/02 19:57:53 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	handle_error(short exit_code)
 {
-	if (exit_code == 1)
+	if (exit_code == EXIT_FAILURE)
 		ft_putstr_fd("Error\n", STDERR_FILENO);
-	exit(EXIT_FAILURE);
+	exit(exit_code);
 }
 
 void	clear_all(t_push *push_swap, short exit_code)
