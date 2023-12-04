@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 18:20:37 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:37:50 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,15 @@ void	set_price(t_stack *stack_a, t_stack *stack_b)
 			price = len_b - stack_b->position;
 		price += get_match_node_price(stack_b, len_a);
 		stack_b->price = price;
+
+		ft_printf("b->value: %d\n", stack_b->value);
+		ft_printf("\033[32mb->price\033[0m: %d\n", stack_b->price);
+		ft_printf("b->target_node->value: %d\n", stack_b->match_node->value);
+		if (stack_b->above_median)
+			ft_printf("b->above_median: true\n\n");
+		else
+			ft_printf("b->above_median: false\n\n");
+
 		stack_b = stack_b->next;
 	}
 }
