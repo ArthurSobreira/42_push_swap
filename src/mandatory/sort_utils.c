@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:47:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 18:02:21 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:09:01 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ void	set_position(t_stack *stack)
 	{
 		stack->position = current_pos;
 		if (current_pos <= center_line)
-			stack->above_median = TRUE;
+			stack->above_center = TRUE;
 		else if (current_pos > center_line)
-			stack->above_median = FALSE;
+			stack->above_center = FALSE;
 		stack = stack->next;
 		++current_pos;
 	}
@@ -41,12 +41,12 @@ void	smallest_to_top(t_push *push_swap)
 	set_position(push_swap->stack_a);
 	smallest_pos = find_smallest_position(push_swap->stack_a);
 	smallest_node = get_node(push_swap->stack_a, smallest_pos);
-	if (smallest_node->above_median)
+	if (smallest_node->above_center)
 	{
 		while (push_swap->stack_a->position != smallest_pos)
 			rotate(push_swap, ra, TRUE);
 	}
-	else if (!smallest_node->above_median)
+	else if (!smallest_node->above_center)
 	{
 		while (push_swap->stack_a->position != smallest_pos)
 			reverse_rotate(push_swap, rra, TRUE);
@@ -58,7 +58,7 @@ int	get_match_node_price(t_stack *stack, size_t len_match_stack)
 	int	price;
 
 	price = 0;
-	if (stack->match_node->above_median)
+	if (stack->match_node->above_center)
 		price += stack->match_node->position;
 	else
 		price += (len_match_stack - stack->match_node->position);
