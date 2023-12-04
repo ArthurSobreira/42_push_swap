@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 11:42:04 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:00:29 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,19 @@ t_stack	*get_node(t_stack *stack, int position)
 	while (stack != NULL)
 	{
 		if (stack->position == position)
+			return (stack);
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+t_stack	*get_cheapest(t_stack *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack != NULL)
+	{
+		if (stack->cheapest)
 			return (stack);
 		stack = stack->next;
 	}
