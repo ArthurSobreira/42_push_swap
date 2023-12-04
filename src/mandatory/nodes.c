@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/30 19:00:22 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:42:04 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_stack	*find_last_node(t_stack *stack)
 	return (stack);
 }
 
-t_stack	*get_node(t_stack *stack, short position)
+t_stack	*get_node(t_stack *stack, int position)
 {
 	while (stack != NULL)
 	{
