@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 17:40:29 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:32:41 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,7 +113,7 @@ void	set_match_node(t_stack *stack_a, t_stack *stack_b);
 // Sort Utils Functions
 void	set_position(t_stack *stack);
 void	smallest_to_top(t_push *push_swap);
-short	find_smallest_position(t_stack *stack);
-short	find_biggest_position(t_stack *stack);
+int		find_smallest_position(t_stack *stack);
+int		find_biggest_position(t_stack *stack);
 
 #endif
