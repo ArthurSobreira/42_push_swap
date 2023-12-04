@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 19:00:05 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:08:26 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef struct s_stack
 	int				value;
 	int				position;
 	int				price;
-	t_bool			above_median;
+	t_bool			above_center;
 	t_bool			cheapest;
 	struct s_stack	*match_node;
 	struct s_stack	*prev;
