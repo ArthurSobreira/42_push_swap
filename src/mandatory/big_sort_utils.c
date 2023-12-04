@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 18:42:08 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:42:57 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,4 +60,24 @@ void	set_price(t_stack *stack_a, t_stack *stack_b)
 		stack_b->price = price;
 		stack_b = stack_b->next;
 	}
+}
+
+void	set_cheapest(t_stack *stack)
+{
+	int		cheapest_price;
+	t_stack	*cheapest_node;
+
+	if (stack == NULL)
+		return ;
+	cheapest_price = INT_MAX;
+	while (stack != NULL)
+	{
+		if (stack->price < cheapest_price)
+		{
+			cheapest_price = stack->price;
+			cheapest_node = stack;
+		}
+		stack = stack->next;
+	}
+	cheapest_node->cheapest = TRUE;
 }
