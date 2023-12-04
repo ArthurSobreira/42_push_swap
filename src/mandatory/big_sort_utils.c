@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 19:00:20 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:08:43 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	set_price(t_stack *stack_a, t_stack *stack_b)
 	price = 0;
 	while (stack_b != NULL)
 	{
-		if (stack_b->above_median)
+		if (stack_b->above_center)
 			price = stack_b->position;
 		else
 			price = len_b - stack_b->position;
