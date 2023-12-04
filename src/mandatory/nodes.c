@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 19:00:29 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 20:09:06 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ t_stack	*create_node(int value)
 	new_node->value = value;
 	new_node->position = 0;
 	new_node->price = 0;
-	new_node->above_median = FALSE;
+	new_node->above_center = FALSE;
 	new_node->cheapest = FALSE;
 	new_node->prev = NULL;
 	new_node->next = NULL;
