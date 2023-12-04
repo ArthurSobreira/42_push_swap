@@ -24,7 +24,7 @@ void	read_commands(t_push *push_swap)
 	counter = 1;
 	while (TRUE)
 	{
-		ft_printf("\033[36;3m%dst command\033[0m\033[37;3m>\033[0m ",
+		ft_printf("\033[34;3m%dst command\033[0m\033[37;3m>\033[0m ",
 			counter++);
 		command = get_next_line(STDIN_FILENO);
 		if (command == NULL)
