@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 18:25:52 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 19:00:05 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,7 @@ void	link_node(t_stack **stack, int value);
 t_stack	*create_node(int value);
 t_stack	*find_last_node(t_stack *stack);
 t_stack	*get_node(t_stack *stack, int position);
+t_stack	*get_cheapest(t_stack *stack);
 
 // Stack Functions
 t_bool	is_ordered(t_stack *stack);
