@@ -21,6 +21,7 @@ MANDATORY_SOURCES_PATH = ./src/mandatory/
 BONUS_SOURCES_PATH = ./src/bonus/
 
 MANDATORY_SOURCES = \
+	big_sort_utils.c \
 	big_sort.c \
 	clear.c \
 	cmd_push.c \
