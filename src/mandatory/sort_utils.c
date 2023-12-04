@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:47:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 11:33:32 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 18:02:21 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,18 @@ void	smallest_to_top(t_push *push_swap)
 		while (push_swap->stack_a->position != smallest_pos)
 			reverse_rotate(push_swap, rra, TRUE);
 	}
+}
+
+int	get_match_node_price(t_stack *stack, size_t len_match_stack)
+{
+	int	price;
+
+	price = 0;
+	if (stack->match_node->above_median)
+		price += stack->match_node->position;
+	else
+		price += (len_match_stack - stack->match_node->position);
+	return (price);
 }
 
 int	find_biggest_position(t_stack *stack)
