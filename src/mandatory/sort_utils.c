@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 10:47:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 17:42:32 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/04 11:33:32 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,8 @@ void	set_position(t_stack *stack)
 
 void	smallest_to_top(t_push *push_swap)
 {
-	short	smallest_pos;
 	t_stack	*smallest_node;
+	int		smallest_pos;
 
 	set_position(push_swap->stack_a);
 	smallest_pos = find_smallest_position(push_swap->stack_a);
@@ -53,10 +53,10 @@ void	smallest_to_top(t_push *push_swap)
 	}
 }
 
-short	find_biggest_position(t_stack *stack)
+int	find_biggest_position(t_stack *stack)
 {
-	short	position;
-	int		temp_max;
+	int	position;
+	int	temp_max;
 
 	position = 0;
 	temp_max = stack->value;
@@ -72,10 +72,10 @@ short	find_biggest_position(t_stack *stack)
 	return (position);
 }
 
-short	find_smallest_position(t_stack *stack)
+int	find_smallest_position(t_stack *stack)
 {
-	short	position;
-	int		temp_min;
+	int	position;
+	int	temp_min;
 
 	position = 0;
 	temp_min = stack->value;
