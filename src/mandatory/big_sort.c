@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:17:09 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/05 19:03:42 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:14:25 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	big_sort(t_push *push_swap)
 	}
 	if (!is_ordered(push_swap->stack_a))
 		sort_three(push_swap);
-	while (push_swap->stack_b)
+	while (push_swap->stack_b != NULL)
 	{
 		set_position(push_swap->stack_a);
 		set_position(push_swap->stack_b);
