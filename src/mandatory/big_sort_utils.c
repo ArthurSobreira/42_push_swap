@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 20:08:43 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/05 17:04:14 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,4 +80,28 @@ void	set_cheapest(t_stack *stack)
 		stack = stack->next;
 	}
 	cheapest_node->cheapest = TRUE;
+}
+
+void	rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
+{
+	while ((*stack_a != cheapest->match_node) && (*stack_b != cheapest))
+	{
+		execute_rotate(stack_a);
+		execute_rotate(stack_b);
+		ft_printf("rr\n");
+	}
+	set_position(*stack_a);
+	set_position(*stack_b);
+}
+
+void	rrotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
+{
+	while ((*stack_a != cheapest->match_node) && (*stack_b != cheapest))
+	{
+		execute_reverse_rotate(stack_a);
+		execute_reverse_rotate(stack_b);
+		ft_printf("rrr\n");
+	}
+	set_position(*stack_a);
+	set_position(*stack_b);
 }
