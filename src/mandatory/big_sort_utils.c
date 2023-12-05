@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/05 17:04:14 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/05 19:52:47 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,10 +43,12 @@ void	set_match_node(t_stack *stack_a, t_stack *stack_b)
 
 void	set_price(t_stack *stack_a, t_stack *stack_b)
 {
+	t_stack	*head;
 	size_t	len_a;
 	size_t	len_b;
 	int		price;
 
+	head = stack_b;
 	len_a = stack_length(stack_a);
 	len_b = stack_length(stack_b);
 	price = 0;
@@ -57,6 +59,10 @@ void	set_price(t_stack *stack_a, t_stack *stack_b)
 		else
 			price = len_b - stack_b->position;
 		price += get_match_node_price(stack_b, len_a);
+		if (stack_b == get_node(head, find_biggest_position(head)))
+			price -= 1;
+		if (stack_b == get_node(head, find_smallest_position(head)))
+			price += 1;
 		stack_b->price = price;
 		stack_b = stack_b->next;
 	}
