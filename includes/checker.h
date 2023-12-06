@@ -64,6 +64,7 @@ typedef struct s_push
 // Init Functions
 t_push	*init_push_swap(int argc, char *argv[]);
 void	init_stack(t_push *push_swap);
+void	link_node(t_stack **stack, int value);
 
 // Validate Functions
 void	validate_args(t_push *push_swap);
@@ -71,7 +72,6 @@ t_bool	check_duplication(char *args_list[]);
 t_bool	check_sintax(char *number);
 
 // Node Functions
-void	link_node(t_stack **stack, int value);
 t_stack	*create_node(int value);
 t_stack	*find_last_node(t_stack *stack);
 
