@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/06 12:01:27 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:26:54 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,9 @@ void	set_price(t_stack *stack_a, t_stack *stack_b)
 		else
 			price = len_b - stack_b->position;
 		price += get_match_node_price(stack_b, len_a);
-		if (stack_b == get_node(head, find_biggest_position(head)))
+		if (stack_b == get_node(head, find_biggest_position(head)) || \
+			stack_b == get_second_bigger(head) || \
+			stack_b == get_third_bigger(head))
 			price -= 1;
 		else if (stack_b == get_node(head, find_smallest_position(head)))
 			price += 1;
@@ -86,4 +88,40 @@ void	set_cheapest(t_stack *stack)
 		stack = stack->next;
 	}
 	cheapest_node->cheapest = TRUE;
+}
+
+t_stack	*get_second_bigger(t_stack *stack)
+{
+	t_stack	*biggest;
+	t_stack	*second_bigger;
+
+	biggest = get_node(stack, find_biggest_position(stack));
+	second_bigger = NULL;
+	while (stack != NULL)
+	{
+		if ((stack != biggest) && (second_bigger == NULL
+				|| stack->value > second_bigger->value))
+			second_bigger = stack;
+		stack = stack->next;
+	}
+	return (second_bigger);
+}
+
+t_stack	*get_third_bigger(t_stack *stack)
+{
+	t_stack	*biggest;
+	t_stack	*second_bigger;
+	t_stack	*third_bigger;
+
+	biggest = get_node(stack, find_biggest_position(stack));
+	second_bigger = get_second_bigger(stack);
+	third_bigger = NULL;
+	while (stack != NULL)
+	{
+		if ((stack != biggest) && (stack != second_bigger) && \
+			(third_bigger == NULL || stack->value > third_bigger->value))
+			third_bigger = stack;
+		stack = stack->next;
+	}
+	return (third_bigger);
 }
