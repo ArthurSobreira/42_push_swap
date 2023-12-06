@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/06 14:25:32 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:42:52 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,9 +115,8 @@ void	sort_few_elements(t_push *push_swap);
 
 // Big Sort Functions
 void	big_sort(t_push *push_swap);
+void	send_everything_to_b(t_push *push_swap);
 void	cheapest_to_top(t_push *push_swap);
-void	rotate_both(t_push *push_swap, t_stack *cheapest);
-void	reverse_rotate_both(t_push *push_swap, t_stack *cheapest);
 void	finalize_sorting(t_push *push_swap, t_stack *top_node, t_name name);
 
 // Sort Utils Functions
@@ -125,6 +124,8 @@ void	set_position(t_stack *stack);
 void	set_match_node(t_stack *stack_a, t_stack *stack_b);
 void	set_price(t_stack *stack_a, t_stack *stack_b);
 void	set_cheapest(t_stack *stack);
+t_stack	*get_second_bigger(t_stack *stack);
+t_stack	*get_third_bigger(t_stack *stack);
 int		get_match_node_price(t_stack *stack, size_t len_match_stack);
 void	smallest_to_top(t_push *push_swap);
 int		find_smallest_position(t_stack *stack);
