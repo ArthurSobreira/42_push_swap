@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:19:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 17:29:18 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:21:46 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,20 @@ void	init_stack(t_push *push_swap)
 		index++;
 	}
 	push_swap->length_a = stack_length(push_swap->stack_a);
+}
+
+void	link_node(t_stack **stack, int value)
+{
+	t_stack	*new_node;
+	t_stack	*last_node;
+
+	new_node = create_node(value);
+	if (!*stack)
+		*stack = new_node;
+	else
+	{
+		last_node = find_last_node(*stack);
+		last_node->next = new_node;
+		new_node->prev = last_node;
+	}
 }
