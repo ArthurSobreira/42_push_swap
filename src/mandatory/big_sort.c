@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:17:09 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/06 12:06:50 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/06 17:26:24 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,7 @@ void	big_sort(t_push *push_swap)
 	t_stack	*smallest_node;
 	int		smallest_pos;
 
-	while (push_swap->length_a > 3)
-	{
-		push(push_swap, pb, TRUE);
-		push_swap->length_a--;
-	}
+	send_everything_to_b(push_swap);
 	if (!is_ordered(push_swap->stack_a))
 		sort_three(push_swap);
 	while (push_swap->stack_b != NULL)
@@ -41,6 +37,30 @@ void	big_sort(t_push *push_swap)
 		finalize_sorting(push_swap, smallest_node, a);
 }
 
+void	send_everything_to_b(t_push *push_swap)
+{
+	t_stack	*second_bigger;
+	t_stack	*biggest_node;
+	int		biggest_pos;
+	t_stack	*smallest_node;
+	int		smallest_pos;
+
+	second_bigger = get_second_bigger(push_swap->stack_a);
+	biggest_pos = find_biggest_position(push_swap->stack_a);
+	biggest_node = get_node(push_swap->stack_a, biggest_pos);
+	smallest_pos = find_smallest_position(push_swap->stack_a);
+	smallest_node = get_node(push_swap->stack_a, smallest_pos);
+	while (push_swap->length_a > 3)
+	{
+		if (push_swap->stack_a == biggest_node || \
+			push_swap->stack_a == second_bigger || \
+			push_swap->stack_a == smallest_node)
+			rotate(push_swap, ra, TRUE);
+		push(push_swap, pb, TRUE);
+		push_swap->length_a--;
+	}
+}
+
 void	cheapest_to_top(t_push *push_swap)
 {
 	t_stack	*cheapest;
@@ -49,31 +69,21 @@ void	cheapest_to_top(t_push *push_swap)
 	cheapest = get_cheapest(push_swap->stack_b);
 	cheapest_match = cheapest->match_node;
 	if ((cheapest->above_center) && (cheapest_match->above_center))
-		rotate_both(push_swap, cheapest);
+	{
+		while ((push_swap->stack_a != cheapest->match_node) && \
+			(push_swap->stack_b != cheapest))
+			rotate(push_swap, rr, TRUE);
+	}
 	else if (!(cheapest->above_center) && !(cheapest_match->above_center))
-		reverse_rotate_both(push_swap, cheapest);
+	{
+		while ((push_swap->stack_a != cheapest->match_node) && \
+			(push_swap->stack_b != cheapest))
+			reverse_rotate(push_swap, rrr, TRUE);
+	}
 	while (push_swap->stack_a != cheapest_match)
 		finalize_sorting(push_swap, cheapest_match, a);
 	while (push_swap->stack_b != cheapest)
 		finalize_sorting(push_swap, cheapest, b);
-}
-
-void	rotate_both(t_push *push_swap, t_stack *cheapest)
-{
-	while ((push_swap->stack_a != cheapest->match_node) && \
-		(push_swap->stack_b != cheapest))
-		rotate(push_swap, rr, TRUE);
-	set_position(push_swap->stack_a);
-	set_position(push_swap->stack_b);
-}
-
-void	reverse_rotate_both(t_push *push_swap, t_stack *cheapest)
-{
-	while ((push_swap->stack_a != cheapest->match_node) && \
-		(push_swap->stack_b != cheapest))
-		reverse_rotate(push_swap, rrr, TRUE);
-	set_position(push_swap->stack_a);
-	set_position(push_swap->stack_b);
 }
 
 void	finalize_sorting(t_push *push_swap, t_stack *top_node, t_name name)
