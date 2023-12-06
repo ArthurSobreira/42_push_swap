@@ -6,27 +6,11 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 15:37:15 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/04 20:09:06 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:25:51 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	link_node(t_stack **stack, int value)
-{
-	t_stack	*new_node;
-	t_stack	*last_node;
-
-	new_node = create_node(value);
-	if (!*stack)
-		*stack = new_node;
-	else
-	{
-		last_node = find_last_node(*stack);
-		last_node->next = new_node;
-		new_node->prev = last_node;
-	}
-}
 
 t_stack	*create_node(int value)
 {
