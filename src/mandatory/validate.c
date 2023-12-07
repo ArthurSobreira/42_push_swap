@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 16:15:04 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/23 12:21:08 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/07 11:45:57 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ t_bool	check_sintax(char *number)
 
 	index = 0;
 	valid = TRUE;
+	if (number[index] == '\0')
+		valid = FALSE;
 	while (number[index])
 	{
 		if ((number[index] == '-' && !ft_isdigit(number[index + 1])) || \
