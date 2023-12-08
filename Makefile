@@ -17,17 +17,18 @@ COLOR_LIMITER = "\033[0m"
 # Paths Definitions
 HEADER_PATH = ./includes
 BIN_PATH = ./bin/
+CMD_PATH = commands/
 MANDATORY_SOURCES_PATH = ./src/mandatory/
 BONUS_SOURCES_PATH = ./src/bonus/
 
 MANDATORY_SOURCES = \
+	$(CMD_PATH)push.c \
+	$(CMD_PATH)reverse_rotate.c \
+	$(CMD_PATH)rotate.c \
+	$(CMD_PATH)swap.c \
 	big_sort_utils.c \
 	big_sort.c \
 	clear.c \
-	cmd_push.c \
-	cmd_rev_rotate.c \
-	cmd_rotate.c \
-	cmd_swap.c \
 	init.c \
 	main.c \
 	nodes.c \
@@ -89,6 +90,7 @@ $(NAME_BONUS): $(BONUS_OBJECTS)
 
 $(BIN_PATH):
 	@mkdir -p $(BIN_PATH)
+	@mkdir -p $(BIN_PATH)$(CMD_PATH)
 
 valgrind: all
 	@valgrind --leak-check=full \
