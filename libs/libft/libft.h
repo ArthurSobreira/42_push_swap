@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/18 19:05:43 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/21 10:58:48 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 14:39:49 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
+int		ft_isatty(int fd);
 int		ft_isdigit(int c);
 int		ft_isprint(int c);
 void	*ft_memchr(const void *s, int c, size_t n);
