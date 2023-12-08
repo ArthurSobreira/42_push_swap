@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:41:22 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/06 15:42:52 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:59:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,16 +98,6 @@ void	handle_error(short exit_code);
 void	clear_all(t_push *push_swap, short exit_code);
 void	free_split(char **split);
 
-// Command Functions
-void	push(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_push(t_stack **dst_stack, t_stack **src_stack);
-void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_swap(t_stack **stack);
-void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_rotate(t_stack **stack);
-void	reverse_rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
-void	execute_reverse_rotate(t_stack **stack);
-
 // Small Sort Functions
 void	small_sort(t_push *push_swap);
 void	sort_three(t_push *push_swap);
@@ -130,5 +120,15 @@ int		get_match_node_price(t_stack *stack, size_t len_match_stack);
 void	smallest_to_top(t_push *push_swap);
 int		find_smallest_position(t_stack *stack);
 int		find_biggest_position(t_stack *stack);
+
+// Command Functions
+void	push(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_push(t_stack **dst_stack, t_stack **src_stack);
+void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_swap(t_stack **stack);
+void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_rotate(t_stack **stack);
+void	reverse_rotate(t_push *push_swap, t_cmd type, t_bool print_checker);
+void	execute_reverse_rotate(t_stack **stack);
 
 #endif
