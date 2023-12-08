@@ -86,9 +86,12 @@ void	clear_all(t_push *push_swap, short exit_code);
 void	clear_invalid_command(t_push *push_swap, char *command);
 void	free_split(char **split);
 
-// Command Functions
+// Checker Functions
 void	read_commands(t_push *push_swap);
 void	execute_commands(t_push *push_swap, char *command);
+void	verify_stack(t_push *push_swap);
+
+// Command Functions
 void	push(t_push *push_swap, t_cmd type, t_bool print_checker);
 void	execute_push(t_stack **dst_stack, t_stack **src_stack);
 void	swap(t_push *push_swap, t_cmd type, t_bool print_checker);
