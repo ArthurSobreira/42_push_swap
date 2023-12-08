@@ -38,11 +38,11 @@ MANDATORY_SOURCES = \
 	validate.c \
 
 BONUS_SOURCES = \
+	$(CMD_PATH)push_bonus.c \
+	$(CMD_PATH)reverse_rotate_bonus.c \
+	$(CMD_PATH)rotate_bonus.c \
+	$(CMD_PATH)swap_bonus.c \
 	clear_bonus.c \
-	cmd_push_bonus.c \
-	cmd_rev_rotate_bonus.c \
-	cmd_rotate_bonus.c \
-	cmd_swap_bonus.c \
 	init_bonus.c \
 	main_bonus.c \
 	nodes_bonus.c \
