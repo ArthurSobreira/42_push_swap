@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:00:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 16:23:48 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:03:57 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	execute_rotate(t_stack **stack)
 	t_stack	*new_last;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		handle_error(EXIT_FAILURE);
+		return ;
 	current_last = find_last_node(*stack);
 	new_last = *stack;
 	*stack = (*stack)->next;
