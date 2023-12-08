@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 11:32:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 17:40:58 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:03:44 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	execute_reverse_rotate(t_stack **stack)
 	t_stack	*new_first;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		handle_error(EXIT_FAILURE);
+		return ;
 	current_first = *stack;
 	new_first = find_last_node(*stack);
 	new_first->prev->next = NULL;
