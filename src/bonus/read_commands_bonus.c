@@ -14,23 +14,26 @@
 
 void	read_commands(t_push *push_swap)
 {
+	size_t	length;
 	char	*command;
 	int		counter;
-	size_t	len;
 
+	if (ft_isatty(STDIN_FILENO))
+		ft_printf("\033[37;4mEnter a command (Ctrl+D to stop):\033[0m\n");
 	counter = 1;
 	while (TRUE)
 	{
-		ft_printf("\033[34;3m%dst command\033[0m\033[37;3m>\033[0m ",
-			counter++);
+		if (ft_isatty(STDIN_FILENO))
+			ft_printf("\033[34;3m%dst command\033[0m\033[37;3m>\033[0m ",
+				counter++);
 		command = get_next_line(STDIN_FILENO);
 		if (command == NULL)
 			break ;
 		execute_commands(push_swap, command);
 		free(command);
 	}
-	len = stack_length(push_swap->stack_a);
-	if ((is_ordered(push_swap->stack_a)) && (len == push_swap->length_a)
+	length = stack_length(push_swap->stack_a);
+	if ((is_ordered(push_swap->stack_a)) && (length == push_swap->length_a)
 		&& (push_swap->stack_b == NULL))
 		ft_printf("\n\033[32;1mOK\033[0m\n");
 	else
