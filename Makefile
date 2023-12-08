@@ -104,12 +104,17 @@ clean:
 	@make clean -C $(LIB_PATH) --no-print-directory
 	@rm -rf $(BIN_PATH)
 
-fclean: clean
+fclean: clean fclean_bonus
 	@echo $(RED)[Removing $(NAME) executable]$(COLOR_LIMITER)
 	@make fclean -C $(LIB_PATH) --no-print-directory
 	@rm -rf $(NAME)
-	@rm -rf $(NAME_BONUS)
 	@rm -rf $(VALGRIND_LOG)
+
+fclean_bonus:
+ifneq ($(wildcard $(NAME_BONUS)),)
+	@echo $(RED)[Removing $(NAME_BONUS) executable]$(COLOR_LIMITER)
+	@rm -rf $(NAME_BONUS)
+endif
 
 re: fclean
 	@make --no-print-directory
@@ -117,4 +122,5 @@ re: fclean
 re_bonus: fclean
 	@make bonus --no-print-directory
 
-.PHONY: all clean fclean re libft bonus re_bonus valgrind
+.PHONY: all clean fclean re libft \
+	bonus fclean_bonus re_bonus valgrind
