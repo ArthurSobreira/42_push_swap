@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/22 17:58:58 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 16:23:51 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:04:06 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ void	execute_swap(t_stack **stack)
 	t_stack	*second;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		handle_error(EXIT_FAILURE);
+		return ;
 	first = *stack;
 	second = (*stack)->next;
 	if (second->next != NULL)
