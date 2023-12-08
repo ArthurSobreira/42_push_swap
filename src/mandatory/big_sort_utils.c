@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 18:13:37 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/08 13:40:07 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:18:48 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void	set_match_node(t_stack *stack_a, t_stack *stack_b)
 		current_a = stack_a;
 		while (current_a)
 		{
-			if (current_a->value > stack_b->value \
-				&& current_a->value < current_best)
+			if (current_a->value > stack_b->value && \
+				current_a->value < current_best)
 			{
 				current_best = current_a->value;
 				match_node = current_a;
