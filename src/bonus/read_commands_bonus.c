@@ -14,27 +14,23 @@
 
 void	read_commands(t_push *push_swap)
 {
+	size_t	counter;
 	char	*command;
-	int		counter;
-	size_t	len;
 
 	counter = 1;
+	if (ft_isatty(STDIN_FILENO))
+		ft_printf("\033[37;4mEnter a command (Ctrl+D to stop):\033[0m\n");
 	while (TRUE)
 	{
-		ft_printf("\033[34;3m%dst command\033[0m\033[37;3m>\033[0m ",
-			counter++);
+		if (ft_isatty(STDIN_FILENO))
+			ft_printf("\033[34;3m%dst command\033[0m\033[37;3m>\033[0m ",
+				counter++);
 		command = get_next_line(STDIN_FILENO);
 		if (command == NULL)
 			break ;
 		execute_commands(push_swap, command);
 		free(command);
 	}
-	len = stack_length(push_swap->stack_a);
-	if ((is_ordered(push_swap->stack_a)) && (len == push_swap->length_a)
-		&& (push_swap->stack_b == NULL))
-		ft_printf("\n\033[32;1mOK\033[0m\n");
-	else
-		ft_printf("\n\033[31;1mKO\033[0m\n");
 }
 
 void	execute_commands(t_push *push_swap, char *command)
@@ -63,4 +59,17 @@ void	execute_commands(t_push *push_swap, char *command)
 		reverse_rotate(push_swap, rrr, FALSE);
 	else
 		clear_invalid_command(push_swap, command);
+}
+
+void	verify_stack(t_push *push_swap)
+{
+	size_t	length;
+
+	length = stack_length(push_swap->stack_a);
+	if ((is_ordered(push_swap->stack_a)) && \
+		(length == push_swap->length_a) && \
+		(push_swap->stack_b == NULL))
+		ft_printf("\n\033[32;1mOK\033[0m\n");
+	else
+		ft_printf("\n\033[31;1mKO\033[0m\n");
 }

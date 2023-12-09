@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd_push_bonus.c                                   :+:      :+:    :+:   */
+/*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:02:18 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/02 19:08:57 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 15:50:44 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker.h"
+#include "push_swap.h"
 
 void	push(t_push *push_swap, t_cmd type, t_bool print_checker)
 {

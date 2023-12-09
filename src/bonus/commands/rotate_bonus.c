@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cmd_rotate.c                                       :+:      :+:    :+:   */
+/*   rotate_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/24 17:00:11 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/05 14:38:59 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 16:16:37 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "checker.h"
 
 void	rotate(t_push *push_swap, t_cmd type, t_bool print_checker)
 {

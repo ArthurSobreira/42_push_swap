@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/23 12:20:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/11/29 15:56:58 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 12:30:34 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ t_bool	is_ordered(t_stack *stack)
 	t_stack	*temp;
 
 	if (stack == NULL)
-		handle_error(EXIT_FAILURE);
+		return (FALSE);
 	temp = stack;
 	while (temp->next)
 	{
@@ -33,7 +33,7 @@ size_t	stack_length(t_stack *stack)
 	size_t	length;
 
 	if (stack == NULL)
-		handle_error(EXIT_FAILURE);
+		return (0);
 	length = 1;
 	while (stack->next != NULL)
 	{

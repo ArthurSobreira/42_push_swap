@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/29 18:17:09 by arsobrei          #+#    #+#             */
-/*   Updated: 2023/12/06 17:26:24 by arsobrei         ###   ########.fr       */
+/*   Updated: 2023/12/08 13:47:18 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,8 @@ void	send_everything_to_b(t_push *push_swap)
 {
 	t_stack	*second_bigger;
 	t_stack	*biggest_node;
-	int		biggest_pos;
 	t_stack	*smallest_node;
+	int		biggest_pos;
 	int		smallest_pos;
 
 	second_bigger = get_second_bigger(push_swap->stack_a);
