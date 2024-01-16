@@ -56,4 +56,4 @@ pa
 * The bonus part of the project is creating your own checker for push_swap, which will receive as a parameter a stack, then will wait for the instruction by STDIN.
 If, after executing these instructions on the stack, it is properly ordered, the checker must display <code>OK</code>. In any other case, it must display <code>KO</code>:
 
-<img src="">
+<img src="images/bonus.png">
