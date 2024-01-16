@@ -53,7 +53,9 @@ pa
 
 ## Bonus Part
 
-* The bonus part of the project is creating your own checker for push_swap, which will receive as a parameter a stack, then will wait for the instruction by STDIN.
+* The bonus part of the project is creating your own checker for push_swap, which will receive as a parameter a stack, and then will wait for the instruction by STDIN.
 If, after executing these instructions on the stack, it is properly ordered, the checker must display <code>OK</code>. In any other case, it must display <code>KO</code>:
 
-<img src="images/bonus.png">
+<div align="center">
+   <img height=450 hspace="50" src="images/test_bonus.png">
+</div>
