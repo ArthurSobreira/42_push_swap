@@ -57,5 +57,11 @@ pa
 If, after executing these instructions on the stack, it is properly ordered, the checker must display <code>OK</code>. In any other case, it must display <code>KO</code>:
 
 <div align="center">
-   <img height=450 src="images/test_bonus.png">
+   <table>
+     <tr>
+       <td style="border: 5px solid darkgray;">
+         <img height=450 src="images/test_bonus.png">
+       </td>
+     </tr>
+   </table>
 </div>
