@@ -60,7 +60,7 @@ If, after executing these instructions on the stack, it is properly ordered, the
    <table>
      <tr>
        <td style="border: 5px solid darkgray;">
-         <img height=450 src="images/test_bonus.png">
+         <img height=450 src="push_swap.png">
        </td>
      </tr>
    </table>
